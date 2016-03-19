@@ -5,6 +5,6 @@ tsscreen.o : tsscreen.c
 tsdrawutil.o : tsdrawutil.c
 	gcc -c tsdrawutil.c
 test : main.o tsscreen.o tsdrawutil.o
-	gcc -o test main.o tsdrawutil.o tsscreen.o
-clean : 
-	rm *.o test
+	gcc -o bin/test main.o tsdrawutil.o tsscreen.o
+clean :
+	rm *.o bin/test
