@@ -1,10 +1,12 @@
-main.o : main.c
-	gcc -c main.c
+test.o : test.c
+	gcc -c test.c
 tsscreen.o : tsscreen.c
 	gcc -c tsscreen.c
 tsdrawutil.o : tsdrawutil.c
 	gcc -c tsdrawutil.c
-test : main.o tsscreen.o tsdrawutil.o
-	gcc -o bin/test main.o tsdrawutil.o tsscreen.o
+bin :
+	mkdir bin
+test : test.o tsscreen.o tsdrawutil.o bin
+	gcc -o bin/test test.o tsdrawutil.o tsscreen.o
 clean :
-	rm *.o bin/test
+	rm -rf *.o bin
